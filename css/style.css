@@ -1,0 +1,298 @@
+/*************************************init style css**************************************/
+body,ul,li,div,p{margin: 0px;padding: 0px;}
+li{list-style-type: none;}
+body{background: #48596b;}
+/*清除浮动*/
+.clearfix:before, .clearfix:after{
+    content:".";
+    clear:both;
+    display:block;
+    height:0;
+    overflow:hidden;
+    visibility:hidden;
+}
+/*滚动条*/
+
+.scroll::-webkit-scrollbar{
+	width: 2px;
+	height: 1px;
+}
+.clearfix{zoom: 1;}
+
+.active{
+	background: #363f48 !important;
+}
+.activeIcon{
+	color: #fff !important;
+}
+.read{
+	width: 10px;
+	height: 10px;
+	border-radius: 100%;
+	background: #f45f63;
+	position: absolute;
+	right: 22px;
+}
+.floatRgit{
+	float: right;
+}
+
+.floatLeft{
+	float: left;
+}
+
+.bf{
+	background: #fff;
+}
+
+.bb{
+	background: #55d58b;
+	color: #fff;
+}
+
+
+/************************************* ***************************************************/
+.container{
+	width: 1111px;
+	height: 700px;
+	/*background: #303942;*/
+	margin: 90px auto;
+}
+
+/************************************ system style css start ****************************/
+.system{
+	width: 85px;
+	height: 100%;
+	border-radius: 5px 0px 0px 5px;
+	background: #303942;
+	float: left;
+	/*background: red;*/
+}
+.user{
+	width: 100%;
+	height: 68px;
+	padding-top:1px; 
+	position: relative;
+}
+.user img{
+	width: 50px;
+	height: 50px;
+	border-radius: 100%;
+	margin: 9px auto;
+	display: block;
+}
+.userStatus{
+	display: block;
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	background: #54d48a;
+	border-radius: 100%;
+	right: 17px;
+	top: 15px;
+}
+.menu{
+	width: 100%;
+	height: 580px;
+	overflow: hidden;
+}
+.menuList{
+	width: 100%;
+	height: 100%;
+}
+.menuList li{
+	text-align:center;
+	padding: 15px;
+	position: relative;
+}
+.iconSize{
+	font-size: 32px !important; 
+	color: #98a8b5;
+}
+.signOutMenu{
+	width: 100%;
+	height: 45px;
+	text-align: center;
+}
+
+/****************************************** chatList style css ***************************************/
+.chatList{
+	width: 300px;
+	height: 100%;
+	background: #363f48;
+	float: left;
+}
+.search{
+	width: 100%;
+	height: 66px;
+	border-bottom: 2px solid #303942;
+}
+#sinput{
+	width: 230px;
+	height: 30px;
+	border-radius: 50px;
+	border:none;
+	outline: none;
+	margin: 18px 10px 0px 15px; 
+	padding: 0px 15px;
+	background:  #303942;
+	color: #fff;
+}
+.recoedList,.recoedList ul{
+	width: 100%;
+	height: 630px;
+	overflow-y: auto;
+}
+.recoedList ul li{
+	width: 100%;
+	height: 65px;
+	overflow: hidden;
+	display: block;
+}
+.avatar{
+	width: 45px;
+	height:45px;
+	margin: 10px 10px;
+	float: left;
+}
+.avatar img{
+	width: 45px;
+	height: 45px;
+	border-radius: 100%;
+}
+.chatListTitle{
+	width: 230px;
+	height: 51px;
+	float: left;
+	margin: 7px 0px;
+}
+.name{
+	width: 100%;
+	height: 25px;
+	padding-left: 5px;
+	overflow: hidden;
+}
+.nickname{
+	color: #fff;
+	font-size: 20px;
+	display: block;
+	float: left;
+}
+.angle{
+	width: 20px;
+	height: 20px;
+	font-size: 14px;
+	color: #fff;
+	border-radius: 100%;
+	background: #f26060;
+	display: block;
+	text-align: center;
+	float: left;
+	margin: 5px 0px 0px 10px;
+}
+.time{
+	display: block;
+	float: right;
+	width: 40px;
+	height: 25px;
+	line-height: 30px;
+	margin-right: 8px;
+	color: #4d565f;
+}
+.prompt{
+	width: 100%;
+	height: 20px;
+	margin-top: 4px;
+	color: #6c7680;
+	font-size: 16px;
+	padding-left: 5px;
+}
+
+/****************************************** view style css *************************************/
+.view{
+	width: 725px;
+	height: 700px;
+	background: #f3f7f8;
+	float: left;
+	border-radius: 0px 5px 5px 0px;
+}
+
+.viewTop{
+	width: 100%;
+	height: 66px;
+	border-bottom: 2px solid #e3e7e8;
+}
+.viewTitle{
+	width: 300px;
+	height: 66px;
+	line-height: 66px;
+	font-size: 22px;
+	font-weight: 600;
+	margin:0px 15px;
+}
+.viewContent{
+	width: 100%;
+	height: 460px;
+	overflow-y: auto; 
+	padding-top:8px;
+}
+.viewContent ul{
+	width: 100%;
+	height: 100%;
+}
+.viewContent ul li{
+	margin-bottom: 15px;
+}
+.send{
+	width: 100%;
+	height: 162px;
+	border-radius: 0px 0px 5px 0px;
+	background:#fff;
+}
+.sendMenu{
+	width: 100%;
+	height: 32px;
+	background: #ccc;
+}
+#sendInput{
+	width: 705px;
+	height: 90px;
+	border:none;
+	outline: none;
+	resize: none;
+	padding: 4px 10px;
+	font-size: 14px;
+	font-family:-webkit-pictograph;
+}
+.sendBtn{
+	width: 120px;
+	height: 28px;
+	border: none;
+	outline: none;
+	float: right;
+	margin-right: 10px;
+	border-radius: 2px;
+	color: #fff;
+	background: #55d389;
+}
+.viewAvatar{
+	width: 45px;
+	height: 45px;
+	margin: 0px 10px;
+}
+.viewAvatar img{
+	width:45px;
+	height: 45px;
+	border-radius: 100%;
+}
+.message{
+	max-width:450px;
+	height: 100%;
+	/*width: 450px;*/
+	border-radius: 5px;
+	padding: 5px 10px;
+	WORD-WRAP:break-word;
+	TABLE-LAYOUT:fixed;
+	word-break:break-all;
+	line-height: 25px;
+}
