@@ -165,6 +165,156 @@
 							</div>
 						</div>
 					</li>
+					<li class="clearfix">
+						<div class="avatar">
+							<img src="img/userAvatar.jpg">
+						</div>
+						<div class="chatListTitle">
+							<div class="name clearfix">
+								<span class="nickname">Kevin Wang</span>
+								<span class="angle">1</span>
+								<span class="time">19:22</span>
+							</div>
+							<div class="prompt">
+								server is on the runing ......
+							</div>
+						</div>
+					</li>
+					<li class="clearfix">
+						<div class="avatar">
+							<img src="img/userAvatar.jpg">
+						</div>
+						<div class="chatListTitle">
+							<div class="name clearfix">
+								<span class="nickname">Kevin Wang</span>
+								<span class="angle">1</span>
+								<span class="time">19:22</span>
+							</div>
+							<div class="prompt">
+								server is on the runing ......
+							</div>
+						</div>
+					</li>
+					<li class="clearfix">
+						<div class="avatar">
+							<img src="img/userAvatar.jpg">
+						</div>
+						<div class="chatListTitle">
+							<div class="name clearfix">
+								<span class="nickname">Kevin Wang</span>
+								<span class="angle">1</span>
+								<span class="time">19:22</span>
+							</div>
+							<div class="prompt">
+								server is on the runing ......
+							</div>
+						</div>
+					</li>
+					<li class="clearfix">
+						<div class="avatar">
+							<img src="img/userAvatar.jpg">
+						</div>
+						<div class="chatListTitle">
+							<div class="name clearfix">
+								<span class="nickname">Kevin Wang</span>
+								<span class="angle">1</span>
+								<span class="time">19:22</span>
+							</div>
+							<div class="prompt">
+								server is on the runing ......
+							</div>
+						</div>
+					</li>
+					<li class="clearfix">
+						<div class="avatar">
+							<img src="img/userAvatar.jpg">
+						</div>
+						<div class="chatListTitle">
+							<div class="name clearfix">
+								<span class="nickname">Kevin Wang</span>
+								<span class="angle">1</span>
+								<span class="time">19:22</span>
+							</div>
+							<div class="prompt">
+								server is on the runing ......
+							</div>
+						</div>
+					</li>
+					<li class="clearfix">
+						<div class="avatar">
+							<img src="img/userAvatar.jpg">
+						</div>
+						<div class="chatListTitle">
+							<div class="name clearfix">
+								<span class="nickname">Kevin Wang</span>
+								<span class="angle">1</span>
+								<span class="time">19:22</span>
+							</div>
+							<div class="prompt">
+								server is on the runing ......
+							</div>
+						</div>
+					</li>
+					<li class="clearfix">
+						<div class="avatar">
+							<img src="img/userAvatar.jpg">
+						</div>
+						<div class="chatListTitle">
+							<div class="name clearfix">
+								<span class="nickname">Kevin Wang</span>
+								<span class="angle">1</span>
+								<span class="time">19:22</span>
+							</div>
+							<div class="prompt">
+								server is on the runing ......
+							</div>
+						</div>
+					</li>
+					<li class="clearfix">
+						<div class="avatar">
+							<img src="img/userAvatar.jpg">
+						</div>
+						<div class="chatListTitle">
+							<div class="name clearfix">
+								<span class="nickname">Kevin Wang</span>
+								<span class="angle">1</span>
+								<span class="time">19:22</span>
+							</div>
+							<div class="prompt">
+								server is on the runing ......
+							</div>
+						</div>
+					</li>
+					<li class="clearfix">
+						<div class="avatar">
+							<img src="img/userAvatar.jpg">
+						</div>
+						<div class="chatListTitle">
+							<div class="name clearfix">
+								<span class="nickname">Kevin Wang</span>
+								<span class="angle">1</span>
+								<span class="time">19:22</span>
+							</div>
+							<div class="prompt">
+								server is on the runing ......
+							</div>
+						</div>
+					</li>
+					<li class="clearfix">
+						<div class="avatar">
+							<img src="img/userAvatar.jpg">
+						</div>
+						<div class="chatListTitle">
+							<div class="name clearfix">
+								<span class="nickname">Kevin Wang</span>
+								<span class="angle">1</span>
+								<span class="time">19:22</span>
+							</div>
+							<div class="prompt">
+								server is on the runing ......
+							</div>
+						</div>
+					</li>
 
 				</ul>
 			</div>
@@ -321,5 +471,24 @@
 			</div>
 		</div>
 	</div>
+
+
+
+	<script>
+		var socket = new WebSocket('ws://127.0.0.1:8812');
+		socket.onmessage = function(res) {
+			if(res.data != '' ) {
+				socket.send('my name is kevin');
+			}
+			console.log(res);
+		}
+//		socket.send('my name is kevin');
+		console.log(socket);
+		
+		socket.onclose = function() { 
+			alert('Connection is broken');
+		}
+	
+	</script>
 </body>
 </html>

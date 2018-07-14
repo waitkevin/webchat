@@ -189,6 +189,7 @@ body{background: #48596b;}
 	text-align: center;
 	float: left;
 	margin: 5px 0px 0px 10px;
+	line-height: 23px;
 }
 .time{
 	display: block;
