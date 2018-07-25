@@ -16,16 +16,23 @@ class Server
 
 	public function onOpen($server, $request)
 	{
-		$server->push($request->fd, 'connect is successful');
-		var_dump($server);
-		print_r($request);
-		print_r(PHP_EOL.'onOpen'.PHP_EOL);
+		// $server->push($request->fd, 'connect is successful');
+		// var_dump($server);
+		// print_r($request);
+		// print_r(PHP_EOL.'onOpen'.PHP_EOL);
 	}
 
 	public function onMessage($server, $frame)
 	{
+		// $server->connections  is fd collection
 		print_r($frame);
-		print_r(PHP_EOL.'onMessage'.PHP_EOL);
+		foreach ($server->connections as $fd) {
+			if($fd == $frame->fd) continue;
+			$res = $server->push($fd, $frame->data);
+			print_r($res);
+		}
+
+		// print_r($server->connections);
 
 	}
 

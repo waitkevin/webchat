@@ -49,6 +49,9 @@ body{background: #48596b;}
 	background: #55d58b;
 	color: #fff;
 }
+.disable{
+	display: none;
+}
 
 
 /************************************* ***************************************************/
@@ -58,6 +61,29 @@ body{background: #48596b;}
 	/*background: #303942;*/
 	margin: 90px auto;
 }
+
+/************************************ system login css start ****************************/
+.login{
+	width: 550px;
+	height: 350px;
+	background: #fff;
+	margin:200px auto; 
+	border-radius: 5px;
+}
+.title{
+	width: 100%;
+	height: 80px;
+	text-align: center;
+	line-height: 80px;
+	font-size: 28px;
+	color: #666;
+}
+
+
+/************************************ system login css end ******************************/
+
+
+
 
 /************************************ system style css start ****************************/
 .system{

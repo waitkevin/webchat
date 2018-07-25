@@ -5,10 +5,11 @@
 	<title>chitchat</title>
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="font/iconfont.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 </head>
 <body>
-	<div class="container clearfix">
-		<!-- 菜单栏 -->
+	<div class="container clearfix" id="app">
+		<!-- 菜单栏 --> 
 		<div class="system">
 			<div class="user">
 				<img src="img/userAvatar.jpg">
@@ -17,19 +18,19 @@
 			<div class="menu">
 				<ul class="menuList">
 					<li class="active">
-						<span class="read"></span>
+						<span class="read" v-if="menu.newMsg"></span>
 						<i class="icon iconfont iconSize activeIcon">&#xe605;</i>
 					</li>
 					<li class="">
-						<span class="read"></span>
+						<span class="read" v-if="menu.newFriend"></span>
 						<i class="icon iconfont iconSize">&#xe60f;</i>
 					</li>
 					<li class="">
-						<span class="read"></span>
+						<span class="read" v-if="menu.newGroup"></span>
 						<i class="icon iconfont iconSize">&#xe640;</i>
 					</li>
 					<li class="">
-						<span class="read"></span>
+						<span class="read" v-if="menu.newSystem"></span>
 						<i class="icon iconfont iconSize">&#xe645;</i>
 					</li>
 				</ul>
@@ -45,277 +46,19 @@
 			</div>
 			<div class="recoedList scroll">
 				<ul class="scroll">
-					<li class="clearfix">
+					<li class="clearfix" v-for="chatItem in chatList" @click="selectFriendHandle">
 						<div class="avatar">
-							<img src="img/userAvatar.jpg">
+							<img :src="chatItem.avatar">
 						</div>
 						<div class="chatListTitle">
 							<div class="name clearfix">
-								<span class="nickname">Kevin Wang</span>
-								<span class="angle">1</span>
-								<span class="time">19:22</span>
+								<span class="nickname">{{ chatItem.nickname }}</span>
+								<span class="angle" v-if="chatItem.total > 0">{{ chatItem.total }}</span>
+								<span class="time">{{ chatItem.time }}</span>
 							</div>
-							<div class="prompt">
-								server is on the runing ......
-							</div>
+							<div class="prompt">{{ chatItem.msg }}</div>
 						</div>
 					</li>
-					<li class="clearfix">
-						<div class="avatar">
-							<img src="img/userAvatar.jpg">
-						</div>
-						<div class="chatListTitle">
-							<div class="name clearfix">
-								<span class="nickname">Kevin Wang</span>
-								<span class="angle">1</span>
-								<span class="time">19:22</span>
-							</div>
-							<div class="prompt">
-								server is on the runing ......
-							</div>
-						</div>
-					</li>
-					<li class="clearfix">
-						<div class="avatar">
-							<img src="img/userAvatar.jpg">
-						</div>
-						<div class="chatListTitle">
-							<div class="name clearfix">
-								<span class="nickname">Kevin Wang</span>
-								<span class="angle">1</span>
-								<span class="time">19:22</span>
-							</div>
-							<div class="prompt">
-								server is on the runing ......
-							</div>
-						</div>
-					</li>
-					<li class="clearfix">
-						<div class="avatar">
-							<img src="img/userAvatar.jpg">
-						</div>
-						<div class="chatListTitle">
-							<div class="name clearfix">
-								<span class="nickname">Kevin Wang</span>
-								<span class="angle">1</span>
-								<span class="time">19:22</span>
-							</div>
-							<div class="prompt">
-								server is on the runing ......
-							</div>
-						</div>
-					</li>
-					<li class="clearfix">
-						<div class="avatar">
-							<img src="img/userAvatar.jpg">
-						</div>
-						<div class="chatListTitle">
-							<div class="name clearfix">
-								<span class="nickname">Kevin Wang</span>
-								<span class="angle">1</span>
-								<span class="time">19:22</span>
-							</div>
-							<div class="prompt">
-								server is on the runing ......
-							</div>
-						</div>
-					</li>
-					<li class="clearfix">
-						<div class="avatar">
-							<img src="img/userAvatar.jpg">
-						</div>
-						<div class="chatListTitle">
-							<div class="name clearfix">
-								<span class="nickname">Kevin Wang</span>
-								<span class="angle">1</span>
-								<span class="time">19:22</span>
-							</div>
-							<div class="prompt">
-								server is on the runing ......
-							</div>
-						</div>
-					</li>
-					<li class="clearfix">
-						<div class="avatar">
-							<img src="img/userAvatar.jpg">
-						</div>
-						<div class="chatListTitle">
-							<div class="name clearfix">
-								<span class="nickname">Kevin Wang</span>
-								<span class="angle">1</span>
-								<span class="time">19:22</span>
-							</div>
-							<div class="prompt">
-								server is on the runing ......
-							</div>
-						</div>
-					</li>
-					<li class="clearfix">
-						<div class="avatar">
-							<img src="img/userAvatar.jpg">
-						</div>
-						<div class="chatListTitle">
-							<div class="name clearfix">
-								<span class="nickname">Kevin Wang</span>
-								<span class="angle">1</span>
-								<span class="time">19:22</span>
-							</div>
-							<div class="prompt">
-								server is on the runing ......
-							</div>
-						</div>
-					</li>
-					<li class="clearfix">
-						<div class="avatar">
-							<img src="img/userAvatar.jpg">
-						</div>
-						<div class="chatListTitle">
-							<div class="name clearfix">
-								<span class="nickname">Kevin Wang</span>
-								<span class="angle">1</span>
-								<span class="time">19:22</span>
-							</div>
-							<div class="prompt">
-								server is on the runing ......
-							</div>
-						</div>
-					</li>
-					<li class="clearfix">
-						<div class="avatar">
-							<img src="img/userAvatar.jpg">
-						</div>
-						<div class="chatListTitle">
-							<div class="name clearfix">
-								<span class="nickname">Kevin Wang</span>
-								<span class="angle">1</span>
-								<span class="time">19:22</span>
-							</div>
-							<div class="prompt">
-								server is on the runing ......
-							</div>
-						</div>
-					</li>
-					<li class="clearfix">
-						<div class="avatar">
-							<img src="img/userAvatar.jpg">
-						</div>
-						<div class="chatListTitle">
-							<div class="name clearfix">
-								<span class="nickname">Kevin Wang</span>
-								<span class="angle">1</span>
-								<span class="time">19:22</span>
-							</div>
-							<div class="prompt">
-								server is on the runing ......
-							</div>
-						</div>
-					</li>
-					<li class="clearfix">
-						<div class="avatar">
-							<img src="img/userAvatar.jpg">
-						</div>
-						<div class="chatListTitle">
-							<div class="name clearfix">
-								<span class="nickname">Kevin Wang</span>
-								<span class="angle">1</span>
-								<span class="time">19:22</span>
-							</div>
-							<div class="prompt">
-								server is on the runing ......
-							</div>
-						</div>
-					</li>
-					<li class="clearfix">
-						<div class="avatar">
-							<img src="img/userAvatar.jpg">
-						</div>
-						<div class="chatListTitle">
-							<div class="name clearfix">
-								<span class="nickname">Kevin Wang</span>
-								<span class="angle">1</span>
-								<span class="time">19:22</span>
-							</div>
-							<div class="prompt">
-								server is on the runing ......
-							</div>
-						</div>
-					</li>
-					<li class="clearfix">
-						<div class="avatar">
-							<img src="img/userAvatar.jpg">
-						</div>
-						<div class="chatListTitle">
-							<div class="name clearfix">
-								<span class="nickname">Kevin Wang</span>
-								<span class="angle">1</span>
-								<span class="time">19:22</span>
-							</div>
-							<div class="prompt">
-								server is on the runing ......
-							</div>
-						</div>
-					</li>
-					<li class="clearfix">
-						<div class="avatar">
-							<img src="img/userAvatar.jpg">
-						</div>
-						<div class="chatListTitle">
-							<div class="name clearfix">
-								<span class="nickname">Kevin Wang</span>
-								<span class="angle">1</span>
-								<span class="time">19:22</span>
-							</div>
-							<div class="prompt">
-								server is on the runing ......
-							</div>
-						</div>
-					</li>
-					<li class="clearfix">
-						<div class="avatar">
-							<img src="img/userAvatar.jpg">
-						</div>
-						<div class="chatListTitle">
-							<div class="name clearfix">
-								<span class="nickname">Kevin Wang</span>
-								<span class="angle">1</span>
-								<span class="time">19:22</span>
-							</div>
-							<div class="prompt">
-								server is on the runing ......
-							</div>
-						</div>
-					</li>
-					<li class="clearfix">
-						<div class="avatar">
-							<img src="img/userAvatar.jpg">
-						</div>
-						<div class="chatListTitle">
-							<div class="name clearfix">
-								<span class="nickname">Kevin Wang</span>
-								<span class="angle">1</span>
-								<span class="time">19:22</span>
-							</div>
-							<div class="prompt">
-								server is on the runing ......
-							</div>
-						</div>
-					</li>
-					<li class="clearfix">
-						<div class="avatar">
-							<img src="img/userAvatar.jpg">
-						</div>
-						<div class="chatListTitle">
-							<div class="name clearfix">
-								<span class="nickname">Kevin Wang</span>
-								<span class="angle">1</span>
-								<span class="time">19:22</span>
-							</div>
-							<div class="prompt">
-								server is on the runing ......
-							</div>
-						</div>
-					</li>
-
 				</ul>
 			</div>
 		</div>
@@ -327,147 +70,20 @@
 					Kevin Wang
 				</div>
 			</div>
-			<div class="viewContent scroll">
+			<div class="viewContent scroll" id="viweChatWindow">
 				<ul>
-					<li class="clearfix">
-						<div class="viewAvatar floatLeft">
-							<img src="img/userAvatar.jpg">
+					<li class="clearfix" v-for="msgItem in chatMsgList">
+						<div class="viewAvatar" v-bind:class="[(msgItem.uid == 1)? 'floatLeft' :  'floatRgit' ]">
+							<img :src="msgItem.avatar">
 						</div>
-						<div class="message floatLeft bf">
-							爱上了法律上快乐的地方和爱上了法	
-						</div>
-					</li>
-					<li class="clearfix">
-						<div class="viewAvatar floatRgit">
-							<img src="img/userAvatar.jpg">
-						</div>
-						<div class="message floatRgit bb">
-						server is runing .....
-						</div>
-					</li>
-					<li class="right">
-						
-					</li>
-					<li class="clearfix">
-						<div class="viewAvatar floatLeft">
-							<img src="img/userAvatar.jpg">
-						</div>
-						<div class="message floatLeft bf">
-							爱上了法律上快乐的地方和爱上了法	
-						</div>
-					</li>
-					<li class="clearfix">
-						<div class="viewAvatar floatRgit">
-							<img src="img/userAvatar.jpg">
-						</div>
-						<div class="message floatRgit bb">
-						server is runing .....
-						</div>
-					</li>
-					<li class="right">
-						
-					</li>
-					<li class="clearfix">
-						<div class="viewAvatar floatLeft">
-							<img src="img/userAvatar.jpg">
-						</div>
-						<div class="message floatLeft bf">
-							爱上了法律上快乐的地方和爱上了法	
-						</div>
-					</li>
-					<li class="clearfix">
-						<div class="viewAvatar floatRgit">
-							<img src="img/userAvatar.jpg">
-						</div>
-						<div class="message floatRgit bb">
-						server is runing .....
-						</div>
-					</li>
-					<li class="right">
-						
-					</li>
-					<li class="clearfix">
-						<div class="viewAvatar floatLeft">
-							<img src="img/userAvatar.jpg">
-						</div>
-						<div class="message floatLeft bf">
-							爱上了法律上快乐的地方和爱上了法	
-						</div>
-					</li>
-					<li class="clearfix">
-						<div class="viewAvatar floatRgit">
-							<img src="img/userAvatar.jpg">
-						</div>
-						<div class="message floatRgit bb">
-						server is runing .....
-						</div>
-					</li>
-					<li class="right">
-						
-					</li>
-					<li class="clearfix">
-						<div class="viewAvatar floatLeft">
-							<img src="img/userAvatar.jpg">
-						</div>
-						<div class="message floatLeft bf">
-							爱上了法律上快乐的地方和爱上了法	
-						</div>
-					</li>
-					<li class="clearfix">
-						<div class="viewAvatar floatRgit">
-							<img src="img/userAvatar.jpg">
-						</div>
-						<div class="message floatRgit bb">
-						server is runing .....
-						</div>
-					</li>
-					<li class="right">
-						
-					</li>
-					<li class="clearfix">
-						<div class="viewAvatar floatLeft">
-							<img src="img/userAvatar.jpg">
-						</div>
-						<div class="message floatLeft bf">
-							爱上了法律上快乐的地方和爱上了法	
-						</div>
-					</li>
-					<li class="clearfix">
-						<div class="viewAvatar floatRgit">
-							<img src="img/userAvatar.jpg">
-						</div>
-						<div class="message floatRgit bb">
-						server is runing .....
-						</div>
-					</li>
-					<li class="right">
-						
-					</li>
-					<li class="clearfix">
-						<div class="viewAvatar floatLeft">
-							<img src="img/userAvatar.jpg">
-						</div>
-						<div class="message floatLeft bf">
-							爱上了法律上快乐的地方和爱上了法	
-						</div>
-					</li>
-					<li class="clearfix">
-						<div class="viewAvatar floatRgit">
-							<img src="img/userAvatar.jpg">
-						</div>
-						<div class="message floatRgit bb">
-						server is runing .....
-						</div>
-					</li>
-					<li class="right">
-						
+						<div class="message" v-bind:class="[(msgItem.uid == 1)? 'floatLeft bf' :  'floatRgit bb' ]"> {{ msgItem.msg }} </div>
 					</li>
 				</ul>
 			</div>
 			<div class="send">
 				<div class="sendMenu"></div>
-				<textarea name="" class="scroll" id="sendInput"></textarea>
-				<button class="sendBtn">Send</button>
+				<textarea v-model="sendWriteData" id="sendInput" class="scroll"  @keyup.enter="sendDataHandle"></textarea>
+				<button class="sendBtn" @click="sendDataHandle">Send</button>
 			</div>
 		</div>
 	</div>
@@ -475,20 +91,74 @@
 
 
 	<script>
-		var socket = new WebSocket('ws://127.0.0.1:8812');
-		socket.onmessage = function(res) {
-			if(res.data != '' ) {
-				socket.send('my name is kevin');
+		var app = new Vue({
+			el: '#app',
+			data: {
+				socket: '',
+				sendWriteData: null,
+				menu: {
+					newMsg: false,
+					newFriend: false,
+					newSystem: false,
+					newGroup: false,
+				},
+				chatList: [
+					{avatar:'img/userAvatar.jpg', nickname: 'Kevin Wang', time: '21:31', msg: 'server is on the way...', total:1},
+					{avatar:'img/userAvatar.jpg', nickname: 'Kevin Wang', time: '21:31', msg: 'server is on the way...',total:0},
+					{avatar:'img/userAvatar.jpg', nickname: 'Kevin Wang', time: '21:31', msg: 'server is on the way...',total:1},
+					{avatar:'img/userAvatar.jpg', nickname: 'Kevin Wang', time: '21:31', msg: 'server is on the way...',total:2},
+				],
+				chatMsgList: [
+					{avatar: 'img/userAvatar.jpg', msg: 'server is on the way...server is on the way...', uid: 1},
+					{avatar: 'img/userAvatar.jpg', msg: 'server is on the way...server is on the way...', uid: 1},
+					{avatar: 'img/userAvatar.jpg', msg: 'server is on the way...server is on the way...', uid: 2},
+					{avatar: 'img/userAvatar.jpg', msg: 'server is on the way...server is on the way...', uid: 1},
+					{avatar: 'img/userAvatar.jpg', msg: 'server is on the way...server is on the way...', uid: 2},
+					{avatar: 'img/userAvatar.jpg', msg: 'server is on the way...server is on the way...', uid: 1},
+					{avatar: 'img/userAvatar.jpg', msg: 'server is on the way...server is on the way...', uid: 2},
+					{avatar: 'img/userAvatar.jpg', msg: 'server is on the way...server is on the way...', uid: 2},
+					{avatar: 'img/userAvatar.jpg', msg: 'server is on the way...server is on the way...', uid: 2},
+					{avatar: 'img/userAvatar.jpg', msg: 'server is on the way...server is on the way...', uid: 2},
+				],
+			},
+			mounted() {
+				this.scrollToBottom();
+				this.socket = new WebSocket('ws://192.168.79.147:8812');
+				this.socket.onmessage = this.acceptServerData;
+			},
+			watch: {
+				chatMsgList: 'scrollToBottom',
+			},
+			methods: {
+				// 选择好友聊天
+				selectFriendHandle: function(event) {
+
+				},
+				// 发送好友聊天
+				sendDataHandle: function(event) {
+					let message = this.sendWriteData.replace(/^\s+|\s+$/g,"");
+					if(message == null || message == '') {
+						this.sendWriteData = null;
+						alert("写点什么吧...");
+						return false;
+					}
+					
+					this.chatMsgList.push({avatar: 'img/userAvatar.jpg', msg: message, uid: 2});
+					this.socket.send(message);
+					this.sendWriteData = null;
+
+				},
+				scrollToBottom: function() {
+					this.$nextTick(() => {
+						var scr =  document.getElementById('viweChatWindow');
+						scr.scrollTop = scr.scrollHeight;
+					})
+				},
+				acceptServerData(res) {
+					this.chatMsgList.push({avatar: 'img/userAvatar.jpg', msg: res.data, uid: 1});
+				}
 			}
-			console.log(res);
-		}
-//		socket.send('my name is kevin');
-		console.log(socket);
-		
-		socket.onclose = function() { 
-			alert('Connection is broken');
-		}
-	
+		})
 	</script>
 </body>
 </html>
